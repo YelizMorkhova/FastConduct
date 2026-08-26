@@ -97,6 +97,74 @@
         .feature-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
         .feature-card h3 { font-weight: 600; margin-bottom: 0.5rem; }
         .feature-card p { color: #475569; font-size: 0.95rem; }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+        .publications-list {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        .publications-list li {
+            margin: 0.8rem 0;
+            color: #334155;
+        }
+        .publications-list .empty {
+            color: #94a3b8;
+            font-style: italic;
+        }
+        .feedback-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+        .feedback-box label {
+            display: block;
+            font-weight: 600;
+            margin: 0.8rem 0 0.3rem 0;
+            color: #0f172a;
+        }
+        .feedback-box input[type="text"],
+        .feedback-box input[type="email"],
+        .feedback-box textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: #f8fafc;
+        }
+        .feedback-box textarea { height: 120px; resize: vertical; }
+        .feedback-box .submit-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 1rem;
+        }
+        .feedback-box .submit-btn:hover { background: #1d4ed8; }
+        .success-message {
+            display: none;
+            background: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid #86efac;
+        }
         .footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -119,6 +187,14 @@
             color: #475569;
             margin-right: 0.5rem;
         }
+        .license-badge {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #475569;
+        }
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: start; }
             .hero { grid-template-columns: 1fr; padding: 1.5rem; }
@@ -128,6 +204,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- ШАПКА -->
         <header class="header">
             <div class="logo-area">
                 <img src="logo.png" alt="FastConduct Logo" class="logo-img">
@@ -140,6 +217,7 @@
             </div>
         </header>
 
+        <!-- ГЛАВНЫЙ БАННЕР -->
         <section class="hero">
             <div>
                 <h2>Ionic Conductivity Calculator using kMC</h2>
@@ -153,9 +231,10 @@
                     <span class="badge">VASP</span>
                     <span class="badge">CIF</span>
                 </p>
-                <p style="margin-top: 1.5rem;">
+                <p style="margin-top: 1rem;">
                     📄 <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub Repository</a> &nbsp;|&nbsp;
-                    📘 <a href="#" id="manualLink">User Manual</a>
+                    📘 <a href="#" id="manualLink">User Manual</a> &nbsp;|&nbsp;
+                    📜 <a href="https://github.com/YelizMorkhova/FastConduct/blob/main/LICENSE" target="_blank">License (MIT)</a>
                 </p>
             </div>
             <div class="quickstart">
@@ -176,7 +255,8 @@
             </div>
         </section>
 
-        <h2 style="font-weight: 700; margin-bottom: 1.5rem;">✨ Key Features</h2>
+        <!-- КЛЮЧЕВЫЕ ВОЗМОЖНОСТИ -->
+        <h2 class="section-title">✨ Key Features</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <h3>📂 Multi-format</h3>
@@ -204,22 +284,83 @@
             </div>
         </div>
 
+        <!-- ПУБЛИКАЦИИ -->
+        <h2 class="section-title">📄 Publications</h2>
+        <div class="publications-list">
+            <p style="margin-bottom: 0.5rem; font-weight: 600; color: #0f172a;">Papers using FastConduct:</p>
+            <ul style="padding-left: 1.5rem;">
+                <li class="empty">No publications yet. If you use FastConduct in your research, please let me know!</li>
+            </ul>
+            <p style="margin-top: 0.8rem; color: #64748b; font-size: 0.9rem;">
+                📧 To add your paper to this list, please contact: <a href="mailto:eliztimofeeva@mail.ru">eliztimofeeva@mail.ru</a>
+            </p>
+            <p style="margin-top: 0.5rem; color: #64748b; font-size: 0.9rem;">
+                📝 <strong>Cite FastConduct:</strong>
+                <code style="background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">
+                    Morkhova, Y.A. FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo (v1.1). GitHub, 2026.
+                </code>
+            </p>
+        </div>
+
+        <!-- ОБРАТНАЯ СВЯЗЬ -->
+        <h2 class="section-title">💬 Feedback & Questions</h2>
+        <div class="feedback-box">
+            <p style="color: #475569; margin-bottom: 1rem;">
+                Have a question about FastConduct? Found a bug? Want to suggest a new feature? 
+                Fill out the form below and I'll get back to you.
+            </p>
+            <form id="feedbackForm" action="https://formsubmit.co/eliztimofeeva@mail.ru" method="POST">
+                <!-- Скрытые поля для FormSubmit -->
+                <input type="hidden" name="_subject" value="FastConduct Feedback">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" name="Name" placeholder="e.g. Ivan Petrov" required>
+                
+                <label for="userEmail">Your Email</label>
+                <input type="email" id="userEmail" name="Email" placeholder="ivan@example.com" required>
+                
+                <label for="userMessage">Message</label>
+                <textarea id="userMessage" name="Message" placeholder="Your question, feedback, or bug report..." required></textarea>
+                
+                <button type="submit" class="submit-btn">✉️ Send Message</button>
+                <div id="successMessage" class="success-message">
+                    ✅ Thank you! Your message has been sent. I'll respond as soon as possible.
+                </div>
+            </form>
+            <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.85rem;">
+                🔒 Your email will only be used to respond to your message. No spam.
+            </p>
+        </div>
+
+        <!-- ПОДВАЛ -->
         <footer class="footer">
             <div>
                 <strong>FastConduct</strong> © 2026 Yelizaveta A. Morkhova
+                <span style="display: inline-block; margin-left: 0.8rem;" class="license-badge">📜 MIT License</span>
             </div>
             <div>
                 <a href="https://orcid.org/0000-0002-5243-296X" target="_blank">ORCID</a> &nbsp;|&nbsp;
                 <a href="https://www.researchgate.net/profile/Yelizaveta-Morkhova" target="_blank">ResearchGate</a> &nbsp;|&nbsp;
-                <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub</a>
+                <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub</a> &nbsp;|&nbsp;
+                <a href="mailto:eliztimofeeva@mail.ru">📧 Contact</a>
             </div>
         </footer>
     </div>
 
     <script>
-        // Ссылки на скачивание (обновите после создания релиза)
+        // Ссылки на скачивание
         document.getElementById('downloadLink').href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.1/FastConduct.exe';
         document.getElementById('manualLink').href = 'https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf';
+        
+        // Обработка формы отправки
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            // Показываем сообщение об успехе
+            document.getElementById('successMessage').style.display = 'block';
+            // Прокручиваем к сообщению
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
