@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastConduct — Ionic Conductivity Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 3rem;
+        }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo {
+            width: 60px; height: 60px;
+            background: #2563eb;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px; font-weight: 700;
+            color: white;
+        }
+        .title h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+        .title .version {
+            font-size: 0.9rem; font-weight: 600;
+            color: #475569; background: #e2e8f0;
+            padding: 0.2rem 0.8rem; border-radius: 20px;
+        }
+        .download-btn {
+            background: #2563eb; color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px; font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+        .download-btn:hover { background: #1d4ed8; }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        .hero h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .hero p { color: #334155; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .quickstart {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .quickstart h3 {
+            font-size: 1rem; text-transform: uppercase;
+            letter-spacing: 0.05em; color: #475569;
+            margin-bottom: 1rem;
+        }
+        .quickstart code {
+            display: block;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s;
+        }
+        .feature-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        .feature-card h3 { font-weight: 600; margin-bottom: 0.5rem; }
+        .feature-card p { color: #475569; font-size: 0.95rem; }
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .footer a { color: #2563eb; text-decoration: none; }
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #475569;
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .header { flex-direction: column; align-items: start; }
+            .hero { grid-template-columns: 1fr; padding: 1.5rem; }
+            .title h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo">⚡</div>
+                <div class="title">
+                    <h1>FastConduct <span class="version">v1.1</span></h1>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="download-btn" id="downloadLink">⬇ Download</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div>
+                <h2>Ionic Conductivity Calculator using kMC</h2>
+                <p>
+                    <strong>FastConduct</strong> enables rapid calculation of ionic conductivity in solids using the kinetic Monte Carlo (kMC) method. 
+                    The user can specify migration barriers and vacancy concentrations directly in the structure.
+                </p>
+                <p>
+                    <span class="badge">Python</span>
+                    <span class="badge">kMC</span>
+                    <span class="badge">VASP</span>
+                    <span class="badge">CIF</span>
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    📄 <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub Repository</a> &nbsp;|&nbsp;
+                    📘 <a href="#" id="manualLink">User Manual</a>
+                </p>
+            </div>
+            <div class="quickstart">
+                <h3>⚡ Quick Start</h3>
+                <ol style="margin-bottom: 1rem; padding-left: 1.2rem; color: #334155; font-size: 0.95rem;">
+                    <li>Download <strong>FastConduct_v1.1.exe</strong></li>
+                    <li>Run the executable (no install)</li>
+                    <li>Load a structure (POSCAR/CIF)</li>
+                    <li>Set parameters & run simulation</li>
+                </ol>
+                <code>
+# Download FastConduct
+# (link will be added after release)
+
+# Run the program
+./FastConduct_v1.1.exe
+                </code>
+            </div>
+        </section>
+
+        <h2 style="font-weight: 700; margin-bottom: 1.5rem;">✨ Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📂 Multi-format</h3>
+                <p>Supports VASP POSCAR/CONTCAR and CIF files with automatic symmetry detection.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚛️ BKL kMC Algorithm</h3>
+                <p>Bortz–Kalos–Lebowitz kinetic Monte Carlo for accurate jump dynamics.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Arrhenius Plots</h3>
+                <p>Automatic visualization with linear fit, error bars, and conductivity data.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🧬 Ion-ion Repulsion</h3>
+                <p>softBV-style repulsion model with configurable alpha and cutoff.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💾 CIF Export</h3>
+                <p>Save vacancy-containing structures for further DFT calculations.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🖥️ User-friendly GUI</h3>
+                <p>CustomTkinter-based interface with responsive design and progress tracking.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <strong>FastConduct</strong> © 2026 Yelizaveta A. Morkhova
+            </div>
+            <div>
+                <a href="https://orcid.org/0000-0002-5243-296X" target="_blank">ORCID</a> &nbsp;|&nbsp;
+                <a href="https://www.researchgate.net/profile/Yelizaveta-Morkhova" target="_blank">ResearchGate</a> &nbsp;|&nbsp;
+                <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Ссылки на скачивание (обновите после создания релиза)
+        document.getElementById('downloadLink').href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.1/FastConduct_v1.1.exe';
+        document.getElementById('manualLink').href = 'https://github.com/YelizMorkhova/FastConduct/blob/main/docs/Manual_1.1.pdf';
+    </script>
+</body>
+</html>
