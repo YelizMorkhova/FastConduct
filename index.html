@@ -28,15 +28,10 @@
             margin-bottom: 3rem;
         }
         .logo-area { display: flex; align-items: center; gap: 1rem; }
-        .logo {
-            width: 60px; height: 60px;
-            background: #2563eb;
+        .logo-img {
+            height: 60px;
+            width: auto;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px; font-weight: 700;
-            color: white;
         }
         .title h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
         .title .version {
@@ -135,7 +130,7 @@
     <div class="container">
         <header class="header">
             <div class="logo-area">
-                <div class="logo">⚡</div>
+                <img src="logo.png" alt="FastConduct Logo" class="logo-img">
                 <div class="title">
                     <h1>FastConduct <span class="version">v1.1</span></h1>
                 </div>
@@ -197,7 +192,7 @@
             </div>
             <div class="feature-card">
                 <h3>🧬 Ion-ion Repulsion</h3>
-                <p>softBV-style repulsion model with configurable alpha and cutoff.</p>
+                <p>Configurable ion-ion repulsion model with adjustable alpha and cutoff parameters.</p>
             </div>
             <div class="feature-card">
                 <h3>💾 CIF Export</h3>
