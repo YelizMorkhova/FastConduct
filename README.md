@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/github/downloads/YelizMorkhova/FastConduct/total?style=for-the-badge&logo=github&label=Downloads" alt="Downloads">
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License">
   </a>
 </p>
 
