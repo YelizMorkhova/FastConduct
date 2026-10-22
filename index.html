@@ -618,27 +618,28 @@
         </div>
 
         <!-- ========== СКРИНШОТЫ ==========
-             ВАЖНО ДЛЯ ВЛАДЕЛЬЦА РЕПОЗИТОРИЯ: до тех пор, пока в корне репозитория
-             (рядом с index.html) нет файлов screenshot-gui.png и screenshot-arrhenius.png,
-             эта секция полностью скрыта (onerror -> display:none).
-             Загрузите оба PNG в корень репозитория — и секция появится сама.
+             ВАЖНО ДЛЯ ВЛАДЕЛЬЦА РЕПОЗИТОРИЯ: файлы screenshot-gui.png (1600x831) и
+             screenshot-arrhenius.png (1600x807) должны лежать в корне репозитория рядом
+             с index.html. Пока их нет, секция полностью скрыта (onerror -> display:none).
+             Атрибуты width/height задают пропорции картинки (CSS: width:100%; height:auto),
+             поэтому их надо синхронизировать с реальными размерами файлов.
              ========== -->
         <section class="shots" aria-labelledby="shotsTitle">
             <h2 class="section-title" id="shotsTitle">🖼 Screenshots</h2>
             <div class="shots-grid">
                 <figure class="shot">
                     <img src="screenshot-gui.png"
-                         alt="FastConduct main window with a loaded crystal structure and kMC parameters"
-                         width="960" height="560" loading="lazy"
+                         alt="FastConduct main window: loaded MgFe2O4 structure, supercell size, working ion, migration energy and kMC parameters"
+                         width="1600" height="831" loading="lazy" decoding="async"
                          onerror="this.closest('.shots').style.display='none'" />
-                    <figcaption>Main window — structure input and simulation parameters.</figcaption>
+                    <figcaption>Main window — structure input (POSCAR/CIF), supercell, working ion and kMC parameters.</figcaption>
                 </figure>
                 <figure class="shot">
                     <img src="screenshot-arrhenius.png"
-                         alt="Arrhenius plot of ionic conductivity produced by FastConduct, with linear fit and error bars"
-                         width="960" height="560" loading="lazy"
+                         alt="Arrhenius plot of ionic conductivity produced by FastConduct: linear fit, error bars, Ea, Em and R-squared"
+                         width="1600" height="807" loading="lazy" decoding="async"
                          onerror="this.closest('.shots').style.display='none'" />
-                    <figcaption>Arrhenius plot — linear fit with error bars.</figcaption>
+                    <figcaption>Arrhenius plot — linear fit, error bars, Eₐ and R². The same data is also exported as a text report.</figcaption>
                 </figure>
             </div>
         </section>
