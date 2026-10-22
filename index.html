@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FastConduct — Ionic Conductivity Calculator</title>
+
+    <!-- ========== SEO / SOCIAL META ========== -->
+    <meta name="description" content="FastConduct calculates ionic conductivity in solid electrolytes with kinetic Monte Carlo (kMC). Free Windows 10/11 GUI tool; VASP POSCAR and CIF input." />
+    <link rel="canonical" href="https://yelizmorkhova.github.io/FastConduct/" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FastConduct" />
+    <meta property="og:title" content="FastConduct — Ionic Conductivity Calculator using kMC" />
+    <meta property="og:description" content="Kinetic Monte Carlo (kMC) tool for ionic conductivity in solids. Free download for Windows 10/11 (64-bit). VASP POSCAR and CIF support." />
+    <meta property="og:url" content="https://yelizmorkhova.github.io/FastConduct/" />
+    <meta property="og:image" content="https://yelizmorkhova.github.io/FastConduct/screenshot-arrhenius.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FastConduct — Ionic Conductivity Calculator using kMC" />
+    <meta name="twitter:description" content="Kinetic Monte Carlo (kMC) tool for ionic conductivity in solids. Free download for Windows 10/11 (64-bit)." />
+    <meta name="twitter:image" content="https://yelizmorkhova.github.io/FastConduct/screenshot-arrhenius.png" />
+
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +31,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -67,6 +90,7 @@
             text-decoration: none;
             transition: background 0.2s;
             box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            display: inline-block;
         }
         .download-btn:hover {
             background: #1d4ed8;
@@ -145,6 +169,69 @@
             margin: 2.5rem 0 1.5rem 0;
             letter-spacing: -0.02em;
         }
+        /* ========== SCREENSHOTS (скрывается, пока PNG не загружены) ========== */
+        .shots {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem 2rem 2rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+        .shots .section-title {
+            margin-top: 1.5rem;
+        }
+        .shots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .shot {
+            margin: 0;
+        }
+        .shot img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background: #f1f5f9;
+        }
+        .shot figcaption {
+            margin-top: 0.7rem;
+            color: #475569;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        /* ========== WHAT'S NEW ========== */
+        .whats-new {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+        .whats-new summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+        .whats-new summary::marker {
+            color: #2563eb;
+        }
+        .whats-new ul {
+            margin: 1rem 0 0 0;
+            padding-left: 1.3rem;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+        .whats-new li {
+            margin: 0.4rem 0;
+        }
+        .whats-new .release-link {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
         .publications-list {
             background: white;
             border-radius: 16px;
@@ -159,6 +246,55 @@
         .publications-list .empty {
             color: #94a3b8;
             font-style: italic;
+        }
+        /* ========== CITATION ========== */
+        .citation {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+        .citation h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .citation p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .citation pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            margin-top: 1rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+        .copy-btn {
+            background: #e2e8f0;
+            color: #0f172a;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.9rem;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #cbd5e1;
+        }
+        .copy-status {
+            display: inline-block;
+            margin-left: 0.8rem;
+            font-size: 0.85rem;
+            color: #166534;
         }
         .feedback-box {
             background: white;
@@ -203,6 +339,13 @@
         .feedback-box .submit-btn:hover {
             background: #1d4ed8;
         }
+        .feedback-box .submit-btn[disabled] {
+            opacity: 0.65;
+            cursor: progress;
+        }
+        .feedback-box .submit-btn[disabled]:hover {
+            background: #2563eb;
+        }
         .success-message {
             display: none;
             background: #dcfce7;
@@ -211,6 +354,19 @@
             border-radius: 8px;
             margin-top: 1rem;
             border: 1px solid #86efac;
+        }
+        .error-message {
+            display: none;
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid #fca5a5;
+        }
+        .error-message a {
+            color: #991b1b;
+            font-weight: 600;
         }
         .footer {
             margin-top: 4rem;
@@ -260,6 +416,54 @@
         .system-req ul li {
             margin: 0.4rem 0;
         }
+        /* ========== TRUST BLOCK (SHA256 + SmartScreen) ========== */
+        .trust {
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .trust h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+        .trust p {
+            color: #475569;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .sha-block {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow-x: auto;
+        }
+        .trust code.inline-code {
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.85em;
+            white-space: normal;
+        }
+        /* ========== FOCUS VISIBILITY ========== */
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -274,6 +478,16 @@
             }
             .logo-img {
                 height: 60px;
+                width: auto;
+            }
+            .shots {
+                padding: 0.5rem 1.2rem 1.5rem 1.2rem;
+            }
+            .system-req,
+            .whats-new,
+            .citation,
+            .feedback-box {
+                padding: 1.2rem 1.2rem;
             }
         }
     </style>
@@ -284,15 +498,15 @@
         <!-- ========== ШАПКА ========== -->
         <header class="header">
             <div class="logo-area">
-                <img src="logo.png" alt="FastConduct Logo" class="logo-img" />
+                <img src="logo.png" alt="FastConduct Logo" class="logo-img" width="80" height="80" />
                 <div class="title">
                     <h1>FastConduct <span class="version">v1.1</span></h1>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="#" class="download-btn" id="downloadLink">⬇ Download</a>
-                <a href="https://github.com/YelizMorkhova/FastConduct/releases" target="_blank" style="text-decoration: none;">
-                    <img src="https://img.shields.io/github/downloads/YelizMorkhova/FastConduct/total?style=for-the-badge&logo=github&label=Downloads&color=2563eb" alt="Total Downloads" />
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases/download/v1.1/FastConduct.exe" class="download-btn" id="downloadLink" target="_blank" rel="noopener">⬇ Download</a>
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases" target="_blank" rel="noopener" style="text-decoration: none;">
+                    <img src="https://img.shields.io/github/downloads/YelizMorkhova/FastConduct/total?style=for-the-badge&logo=github&label=Downloads&color=2563eb" alt="Total Downloads" width="190" height="28" style="height: 28px; width: auto; display: block;" />
                 </a>
             </div>
         </header>
@@ -312,26 +526,31 @@
                     <span class="badge">CIF</span>
                 </p>
                 <p style="margin-top: 1rem;">
-                    📄 <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub Repository</a> &nbsp;|&nbsp;
-                    📘 <a href="#" id="manualLink">User Manual</a> &nbsp;|&nbsp;
-                    📜 <a href="https://github.com/YelizMorkhova/FastConduct/blob/main/LICENSE" target="_blank">License (Proprietary)</a>
+                    📄 <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank" rel="noopener">GitHub Repository</a> &nbsp;|&nbsp;
+                    📘 <a href="https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf" id="manualLink" target="_blank" rel="noopener">User Manual</a> &nbsp;|&nbsp;
+                    📜 <a href="https://github.com/YelizMorkhova/FastConduct/blob/main/LICENSE" target="_blank" rel="noopener">License (Proprietary)</a>
                 </p>
             </div>
             <div class="quickstart">
                 <h3>⚡ Quick Start</h3>
                 <ol style="margin-bottom: 1rem; padding-left: 1.2rem; color: #334155; font-size: 0.95rem;">
-                    <li>Download <strong>FastConduct.exe</strong></li>
-                    <li>Run the executable (no install)</li>
+                    <li>Download <strong>FastConduct.exe</strong> (v1.1, 276 MB)</li>
+                    <li>Double-click the exe — no installation needed</li>
                     <li>Load a structure (POSCAR/CIF)</li>
-                    <li>Set parameters &amp; run simulation</li>
+                    <li>Set parameters &amp; press Run</li>
                 </ol>
                 <code>
-# Download FastConduct
-# (link will be added after release)
+# 1. Download (single .exe, no installer)
+#    https://github.com/YelizMorkhova/FastConduct/
+#    releases/download/v1.1/FastConduct.exe
 
-# Run the program
-./FastConduct.exe
+# 2. Double-click FastConduct.exe
+
+# 3. Load POSCAR / CIF, set parameters, press Run
                 </code>
+                <p style="margin-top: 0.9rem; font-size: 0.9rem; color: #475569;">
+                    Full instructions: <a href="https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf" target="_blank" rel="noopener">User Manual (PDF)</a>
+                </p>
             </div>
         </section>
 
@@ -339,14 +558,34 @@
         <div class="system-req">
             <h3 style="font-weight: 600; margin-bottom: 0.5rem;">💻 System Requirements</h3>
             <ul>
-                <li><strong>OS:</strong> Windows 7 / 8 / 10 / 11 (64-bit) only</li>
+                <li><strong>OS:</strong> Windows 10 / 11 (64-bit). Windows 7/8 are NOT supported.</li>
                 <li><strong>RAM:</strong> 4 GB minimum, 8 GB recommended</li>
                 <li><strong>Disk space:</strong> ~300 MB free space</li>
-                <li><strong>Download size:</strong> ~270 MB</li>
+                <li><strong>Download:</strong> 276 MB (single .exe, no installer)</li>
             </ul>
             <p style="margin-top: 0.5rem; color: #94a3b8; font-size: 0.85rem;">
                 ⚙️ Linux and macOS versions are planned for future releases.
             </p>
+
+            <!-- ========== TRUST BLOCK: SHA256 + SmartScreen ========== -->
+            <div class="trust">
+                <h4>🔐 Verify your download</h4>
+                <p>
+                    <strong>FastConduct.exe</strong> — v1.1, 289 099 075 bytes (276 MiB). SHA-256:
+                </p>
+                <div class="sha-block">9f24ff9a692e6c4b8528d21e478d6b8fe3aed255529ca65eb0a2c4d8fc7cebd2</div>
+                <p style="margin-top: 0.8rem;">
+                    Check it in PowerShell, from the folder where you saved the file:
+                </p>
+                <div class="sha-block">Get-FileHash .\FastConduct.exe -Algorithm SHA256</div>
+                <p>
+                    The hash printed by PowerShell must match the value above. If it does not match, do not run the file — download it again from the official release page.
+                </p>
+                <p>
+                    ℹ️ The .exe is <strong>not code-signed</strong>, so Windows SmartScreen may show <em>“Windows protected your PC”</em>.
+                    Click <em>More info</em> → <em>Run anyway</em> to start the program.
+                </p>
+            </div>
         </div>
 
         <!-- ========== КЛЮЧЕВЫЕ ВОЗМОЖНОСТИ ========== -->
@@ -378,6 +617,52 @@
             </div>
         </div>
 
+        <!-- ========== СКРИНШОТЫ ==========
+             ВАЖНО ДЛЯ ВЛАДЕЛЬЦА РЕПОЗИТОРИЯ: до тех пор, пока в корне репозитория
+             (рядом с index.html) нет файлов screenshot-gui.png и screenshot-arrhenius.png,
+             эта секция полностью скрыта (onerror -> display:none).
+             Загрузите оба PNG в корень репозитория — и секция появится сама.
+             ========== -->
+        <section class="shots" aria-labelledby="shotsTitle">
+            <h2 class="section-title" id="shotsTitle">🖼 Screenshots</h2>
+            <div class="shots-grid">
+                <figure class="shot">
+                    <img src="screenshot-gui.png"
+                         alt="FastConduct main window with a loaded crystal structure and kMC parameters"
+                         width="960" height="560" loading="lazy"
+                         onerror="this.closest('.shots').style.display='none'" />
+                    <figcaption>Main window — structure input and simulation parameters.</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="screenshot-arrhenius.png"
+                         alt="Arrhenius plot of ionic conductivity produced by FastConduct, with linear fit and error bars"
+                         width="960" height="560" loading="lazy"
+                         onerror="this.closest('.shots').style.display='none'" />
+                    <figcaption>Arrhenius plot — linear fit with error bars.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ========== WHAT'S NEW IN v1.1 ========== -->
+        <div class="whats-new">
+            <details>
+                <summary>🆕 What's new in v1.1</summary>
+                <ul>
+                    <li>CIF support with symmetry-operation parsing</li>
+                    <li>BKL kMC algorithm (Bortz–Kalos–Lebowitz)</li>
+                    <li>Configurable ion–ion repulsion (alpha, cutoff)</li>
+                    <li>Multi-threaded runs with a cancel button</li>
+                    <li>Responsive, adaptive GUI</li>
+                    <li>Automatic nearest-neighbour (NN) distance and Np detection</li>
+                    <li>Arrhenius plots with linear fit and error bars</li>
+                    <li>Vacancy-CIF export for DFT</li>
+                </ul>
+                <p class="release-link">
+                    Release notes: <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.1" target="_blank" rel="noopener">FastConduct v1.1 on GitHub</a>
+                </p>
+            </details>
+        </div>
+
         <!-- ========== ПУБЛИКАЦИИ ========== -->
         <h2 class="section-title">📄 Publications</h2>
         <div class="publications-list">
@@ -388,12 +673,21 @@
             <p style="margin-top: 0.8rem; color: #64748b; font-size: 0.9rem;">
                 📧 To add your paper to this list, please contact: <a href="mailto:eliztimofeeva@mail.ru">eliztimofeeva@mail.ru</a>
             </p>
-            <p style="margin-top: 0.5rem; color: #64748b; font-size: 0.9rem;">
-                📝 <strong>Cite FastConduct:</strong>
-                <code style="background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">
-                    Morkhova, Y.A. FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo (v1.1). GitHub, 2026.
-                </code>
-            </p>
+        </div>
+
+        <!-- ========== КАК ЦИТИРОВАТЬ ========== -->
+        <div class="citation">
+            <h3>📝 How to cite</h3>
+            <p>No peer-reviewed paper yet — if you use FastConduct, please cite the software entry above.</p>
+            <pre id="bibtexBlock">@software{morkhova2026fastconduct,
+  author  = {Morkhova, Yelizaveta A.},
+  title   = {FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo},
+  year    = {2026},
+  version = {1.1},
+  url     = {https://github.com/YelizMorkhova/FastConduct}
+}</pre>
+            <button type="button" class="copy-btn" id="copyBibtex" aria-label="Copy BibTeX entry to clipboard">📋 Copy</button>
+            <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
         </div>
 
         <!-- ========== ОБРАТНАЯ СВЯЗЬ ========== -->
@@ -417,9 +711,13 @@
                 <label for="userMessage">Message</label>
                 <textarea id="userMessage" name="Message" required></textarea>
 
-                <button type="submit" class="submit-btn">✉️ Send Message</button>
-                <div id="successMessage" class="success-message">
-                    ✅ Thank you! Your message has been sent. I'll respond as soon as possible.
+                <button type="submit" class="submit-btn" id="submitBtn">✉️ Send Message</button>
+                <div id="successMessage" class="success-message" role="status" aria-live="polite">
+                    ✅ Thank you! Your message was submitted. I'll respond as soon as possible.
+                </div>
+                <div id="errorMessage" class="error-message" role="alert" aria-live="assertive">
+                    ❌ Sending failed, so your message was probably not delivered. Please send it directly to
+                    <a href="mailto:eliztimofeeva@mail.ru">eliztimofeeva@mail.ru</a> instead.
                 </div>
             </form>
             <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.85rem;">
@@ -434,9 +732,11 @@
                 <span style="display: inline-block; margin-left: 0.8rem;" class="license-badge">📜 Proprietary License</span>
             </div>
             <div>
-                <a href="https://orcid.org/0000-0002-5243-296X" target="_blank">ORCID</a> &nbsp;|&nbsp;
-                <a href="https://www.researchgate.net/profile/Yelizaveta-Morkhova" target="_blank">ResearchGate</a> &nbsp;|&nbsp;
-                <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank">GitHub</a> &nbsp;|&nbsp;
+                <a href="https://orcid.org/0000-0002-5243-296X" target="_blank" rel="noopener">ORCID</a> &nbsp;|&nbsp;
+                <a href="https://www.researchgate.net/profile/Yelizaveta-Morkhova" target="_blank" rel="noopener">ResearchGate</a> &nbsp;|&nbsp;
+                <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.1" target="_blank" rel="noopener">Release notes</a> &nbsp;|&nbsp;
+                <a href="https://github.com/YelizMorkhova/FastConduct/issues" target="_blank" rel="noopener">Issues</a> &nbsp;|&nbsp;
                 <a href="mailto:eliztimofeeva@mail.ru">📧 Contact</a>
             </div>
         </footer>
@@ -444,15 +744,136 @@
     </div>
 
     <script>
-        // Ссылки на скачивание
-        document.getElementById('downloadLink').href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.1/FastConduct.exe';
-        document.getElementById('manualLink').href = 'https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf';
+        // ===== Ссылки на скачивание и руководство (в HTML уже стоят реальные href,
+        // этот блок оставлен как безвредная страховка для старых закладок) =====
+        var downloadLink = document.getElementById('downloadLink');
+        if (downloadLink) {
+            downloadLink.href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.1/FastConduct.exe';
+        }
+        var manualLink = document.getElementById('manualLink');
+        if (manualLink) {
+            manualLink.href = 'https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf';
+        }
 
-        // Обработка формы отправки
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-        });
+        // ===== Отправка формы обратной связи через FormSubmit AJAX =====
+        var feedbackForm = document.getElementById('feedbackForm');
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var submitBtn = document.getElementById('submitBtn');
+                var successMessage = document.getElementById('successMessage');
+                var errorMessage = document.getElementById('errorMessage');
+                var originalLabel = submitBtn ? submitBtn.textContent : '';
+
+                function finish() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalLabel;
+                    }
+                }
+
+                if (successMessage) { successMessage.style.display = 'none'; }
+                if (errorMessage) { errorMessage.style.display = 'none'; }
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending…';
+                }
+
+                var nameField = document.getElementById('userName');
+                var emailField = document.getElementById('userEmail');
+                var messageField = document.getElementById('userMessage');
+
+                var payload = {
+                    Name: nameField ? nameField.value : '',
+                    Email: emailField ? emailField.value : '',
+                    Message: messageField ? messageField.value : '',
+                    _subject: 'FastConduct Feedback',
+                    _template: 'table',
+                    _captcha: 'false'
+                };
+
+                fetch('https://formsubmit.co/ajax/eliztimofeeva@mail.ru', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                }).then(function (res) {
+                    // res.ok === false -> бросаем ошибку, показываем красный блок
+                    if (!res.ok) {
+                        throw new Error('HTTP ' + res.status);
+                    }
+                    return res.json().catch(function () {
+                        return null;
+                    });
+                }).then(function () {
+                    finish();
+                    if (successMessage) {
+                        successMessage.style.display = 'block';
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    if (errorMessage) { errorMessage.style.display = 'none'; }
+                    feedbackForm.reset();
+                }, function () {
+                    finish();
+                    if (errorMessage) {
+                        errorMessage.style.display = 'block';
+                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    if (successMessage) { successMessage.style.display = 'none'; }
+                });
+            });
+        }
+
+        // ===== Копирование BibTeX =====
+        var copyBtn = document.getElementById('copyBibtex');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function () {
+                var bibtexBlock = document.getElementById('bibtexBlock');
+                var copyStatus = document.getElementById('copyStatus');
+                var text = bibtexBlock ? bibtexBlock.textContent : '';
+
+                function report(message) {
+                    if (copyStatus) {
+                        copyStatus.textContent = message;
+                        setTimeout(function () {
+                            copyStatus.textContent = '';
+                        }, 2500);
+                    }
+                }
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(function () {
+                        report('✅ Copied');
+                    }, function () {
+                        report('⚠️ Copy failed — please select the text manually.');
+                    });
+                } else {
+                    // Резервный путь для старых браузеров без Clipboard API
+                    var helper = document.createElement('textarea');
+                    helper.value = text;
+                    helper.setAttribute('readonly', 'readonly');
+                    helper.style.position = 'absolute';
+                    helper.style.left = '-9999px';
+                    document.body.appendChild(helper);
+                    helper.select();
+                    var ok = false;
+                    try {
+                        ok = document.execCommand('copy');
+                    } catch (err) {
+                        ok = false;
+                    }
+                    document.body.removeChild(helper);
+                    if (ok) {
+                        report('✅ Copied');
+                    } else {
+                        report('⚠️ Copy failed — please select the text manually.');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
