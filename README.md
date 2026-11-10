@@ -99,7 +99,7 @@ Click **More info** → **Run anyway** to start the program.
 
 ## 📖 Documentation
 
-- 📄 [User Manual (PDF)](https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_1.1.pdf)
+- 📄 [User Manual (PDF)](https://github.com/YelizMorkhova/FastConduct/raw/main/Manual_v.1.2.pdf)
 - 🌐 [Website](https://yelizmorkhova.github.io/FastConduct/)
 
 ---
