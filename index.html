@@ -500,11 +500,11 @@
             <div class="logo-area">
                 <img src="logo.png" alt="FastConduct Logo" class="logo-img" width="80" height="80" />
                 <div class="title">
-                    <h1>FastConduct <span class="version">v1.2</span></h1>
+                    <h1>FastConduct <span class="version">v1.2.1</span></h1>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2/FastConduct.exe" class="download-btn" id="downloadLink" target="_blank" rel="noopener">⬇ Download</a>
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct.exe" class="download-btn" id="downloadLink" target="_blank" rel="noopener">⬇ Download</a>
             </div>
         </header>
 
@@ -531,7 +531,7 @@
             <div class="quickstart">
                 <h3>⚡ Quick Start</h3>
                 <ol style="margin-bottom: 1rem; padding-left: 1.2rem; color: #334155; font-size: 0.95rem;">
-                    <li>Download <strong>FastConduct.exe</strong> (v1.2, 57 MB)</li>
+                    <li>Download <strong>FastConduct.exe</strong> (v1.2.1, 57 MB)</li>
                     <li>Double-click the exe — no installation needed</li>
                     <li>Load a structure (POSCAR/CIF)</li>
                     <li>Set parameters &amp; press Run</li>
@@ -539,7 +539,7 @@
                 <code>
 # 1. Download (single .exe, no installer)
 #    https://github.com/YelizMorkhova/FastConduct/
-#    releases/download/v1.2/FastConduct.exe
+#    releases/download/v1.2.1/FastConduct.exe
 
 # 2. Double-click FastConduct.exe
 
@@ -568,9 +568,9 @@
             <div class="trust">
                 <h4>🔐 Verify your download</h4>
                 <p>
-                    <strong>FastConduct.exe</strong> — v1.2, 60 141 667 bytes (57 MB). SHA-256:
+                    <strong>FastConduct.exe</strong> — v1.2.1, 60 142 073 bytes (57 MB). SHA-256:
                 </p>
-                <div class="sha-block">c6c1dac8e13615265a03ff8e7a537d98123af65b30690b5d9643c021160c39dd</div>
+                <div class="sha-block">e99e45513a04edb14e86bc951915af499dbfbf275440d9f64580ab2c01a73c5f</div>
                 <p style="margin-top: 0.8rem;">
                     Check it in PowerShell, from the folder where you saved the file:
                 </p>
@@ -641,20 +641,18 @@
             </div>
         </section>
 
-        <!-- ========== WHAT'S NEW IN v1.2 ========== -->
-                <!-- ========== WHAT'S NEW IN v1.2 ========== -->
+        <!-- ========== WHAT'S NEW IN v1.2.1 ========== -->
         <div class="whats-new">
-            <details>
-                <summary>🆕 What's new in v1.2</summary>
+            <details open>
+                <summary>🆕 What's new in v1.2.1</summary>
                 <ul>
-                    <li>Robust CIF reader: <code>loop_</code> tags on one line, several data blocks, Cartesian coordinates, composition check</li>
-                    <li>CIF export: real cell angles for hexagonal, monoclinic and triclinic cells</li>
-                    <li><code>Hw</code> convention: guest-water protons as a separate species (working ion Hw, charge +1)</li>
-                    <li>“Save plot → PDF” works again</li>
+                    <li><strong>Diffusion coefficient from the slope of MSD(t)</strong> — the linear fit is used instead of the last point, and the MSD linearity (R²) is printed in the report, so you can see when the trajectory is not yet diffusive.</li>
+                    <li>First paper using FastConduct published — see <a href="https://doi.org/10.1016/j.jpcs.2026.114290" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114290</a>.</li>
                 </ul>
-                <p class="release-link">
-                    Release notes: <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.2" target="_blank" rel="noopener">FastConduct v1.2 on GitHub</a>
-                </p>
+                <p class="release-link">Also in v1.2: robust CIF reader (GSAS2CIF/FullProf, several data blocks,
+                    Cartesian coordinates, composition check), real cell angles in the CIF export, the
+                    <code>Hw</code> convention for guest-water protons, "Save plot → PDF".
+                    <br>Release notes: <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.2.1" target="_blank" rel="noopener">FastConduct v1.2.1 on GitHub</a></p>
             </details>
         </div>
 
@@ -663,7 +661,15 @@
         <div class="publications-list">
             <p style="margin-bottom: 0.5rem; font-weight: 600; color: #0f172a;">Papers using FastConduct:</p>
             <ul style="padding-left: 1.5rem;">
-                <li class="empty">No publications yet. If you use FastConduct in your research, please let me know!</li>
+                                <li>
+                    E.&nbsp;I. Orlova, <strong>Y.&nbsp;A. Morkhova</strong>, A.&nbsp;A. Shindrov, E.&nbsp;D. Baldin,
+                    N.&nbsp;V. Lyskov, E.&nbsp;P. Kharitonova, S.&nbsp;S. Starchikov, I.&nbsp;V. Perunov,
+                    K.&nbsp;V. Frolov, M.&nbsp;I. Smolkov,
+                    <em>Tuning electronic and ionic conductivity in ZnFe<sub>2</sub>O<sub>4</sub> spinel via Sn
+                    doping for Zn-ion cathodes: the role of cation defects</em>,
+                    Journal of Physics and Chemistry of Solids <strong>222</strong> (2027) 114290.
+                    <a href="https://doi.org/10.1016/j.jpcs.2026.114290" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114290</a>
+                </li>
             </ul>
             <p style="margin-top: 0.8rem; color: #64748b; font-size: 0.9rem;">
                 📧 To add your paper to this list, please contact: <a href="mailto:eliztimofeeva@mail.ru">eliztimofeeva@mail.ru</a>
@@ -678,7 +684,7 @@
   author  = {Morkhova, Yelizaveta A.},
   title   = {FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo},
   year    = {2026},
-  version = {1.2},
+  version = {1.2.1},
   url     = {https://github.com/YelizMorkhova/FastConduct}
 }</pre>
             <button type="button" class="copy-btn" id="copyBibtex" aria-label="Copy BibTeX entry to clipboard">📋 Copy</button>
@@ -730,7 +736,7 @@
                 <a href="https://orcid.org/0000-0002-5243-296X" target="_blank" rel="noopener">ORCID</a> &nbsp;|&nbsp;
                 <a href="https://www.researchgate.net/profile/Yelizaveta-Morkhova" target="_blank" rel="noopener">ResearchGate</a> &nbsp;|&nbsp;
                 <a href="https://github.com/YelizMorkhova/FastConduct" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
-                <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.2" target="_blank" rel="noopener">Release notes</a> &nbsp;|&nbsp;
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases/tag/v1.2.1" target="_blank" rel="noopener">Release notes</a> &nbsp;|&nbsp;
                 <a href="https://github.com/YelizMorkhova/FastConduct/issues" target="_blank" rel="noopener">Issues</a> &nbsp;|&nbsp;
                 <a href="mailto:eliztimofeeva@mail.ru">📧 Contact</a>
             </div>
@@ -743,7 +749,7 @@
         // этот блок оставлен как безвредная страховка для старых закладок) =====
         var downloadLink = document.getElementById('downloadLink');
         if (downloadLink) {
-            downloadLink.href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2/FastConduct.exe';
+            downloadLink.href = 'https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct.exe';
         }
         var manualLink = document.getElementById('manualLink');
         if (manualLink) {
