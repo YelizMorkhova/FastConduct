@@ -26,17 +26,17 @@
 
 | Platform | Download | Size |
 |----------|----------|------|
-| 🪟 **Windows 10 / 11 (64-bit)** | [FastConduct.exe](https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2/FastConduct.exe) | 57 MB |
+| 🪟 **Windows 10 / 11 (64-bit)** | [FastConduct.exe](https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct.exe) | 57 MB |
 
 > **Note**: Windows only. Windows 7 and 8 are **not supported** (the application is built on Python 3.12+).
 > Linux and macOS versions are planned for future releases.
 
 ### 🔐 Verify your download
 
-`FastConduct.exe` — v1.2, 60 141 667 bytes. SHA-256:
+`FastConduct.exe` — v1.2.1, 60 142 073 bytes. SHA-256:
 
 ```
-c6c1dac8e13615265a03ff8e7a537d98123af65b30690b5d9643c021160c39dd
+e99e45513a04edb14e86bc951915af499dbfbf275440d9f64580ab2c01a73c5f
 ```
 
 Check it in PowerShell, from the folder where you saved the file:
@@ -63,17 +63,15 @@ Click **More info** → **Run anyway** to start the program.
 - ✅ **CIF export**: Vacancy structures for DFT
 - ✅ **User-friendly GUI**: CustomTkinter interface
 
-### 🩹 What's new in v1.2
+### 🩹 What's new in v1.2.1
 
-- **Robust CIF reader**: `loop_` tags written on one line (GSAS2CIF, FullProf), rows of neighbouring
-  data loops are no longer read as atoms, several `data_` blocks, Cartesian coordinates
-  (`_atom_site_Cartn_*`), positions on the cell boundary merged correctly, and the atom count is
-  cross-checked against `_chemical_formula_sum`.
-- **CIF export**: real cell angles for hexagonal / monoclinic / triclinic cells (plus `_cell_volume`).
-- **`Hw` convention for guest-water protons**: label the two H of each water molecule as `Hw`, select
-  `Hw` as the working ion with charge +1 — structural C–H / N–H / O–H groups then stay out of the
-  jump network. The helper script `mark_water_h.py` does the relabelling automatically.
-- **“Save plot → PDF”** works again.
+- **Diffusion coefficient from the slope of MSD(t)**: the conductivity is now computed from the
+  linear fit of the mean-squared displacement instead of its last point, and the MSD linearity
+  (`R²`) is printed in the report — you can see when the trajectory has not reached the diffusive
+  regime yet. The Haven ratio is still assumed `H_R = 1` (stated in the report).
+- First paper using FastConduct: Orlova et al., *Tuning electronic and ionic conductivity in
+  ZnFe₂O₄ spinel via Sn doping for Zn-ion cathodes: the role of cation defects*,
+  J. Phys. Chem. Solids **222** (2027) 114290, [doi:10.1016/j.jpcs.2026.114290](https://doi.org/10.1016/j.jpcs.2026.114290).
 
 ---
 
@@ -114,7 +112,7 @@ below — and let me know, so your paper can be listed on the website.
   author  = {Morkhova, Yelizaveta A.},
   title   = {FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo},
   year    = {2026},
-  version = {1.2},
+  version = {1.2.1},
   url     = {https://github.com/YelizMorkhova/FastConduct}
 }
 ```
