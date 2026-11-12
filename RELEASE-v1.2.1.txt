@@ -1,0 +1,51 @@
+FastConduct v1.2.1
+==================
+
+FastConduct — Ionic Conductivity Calculator using Kinetic Monte Carlo
+Windows 64-bit, single executable, no installation required.
+
+DOWNLOAD
+  FastConduct.exe
+  https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct.exe
+  Size:   60 142 073 bytes (57 MB)
+  SHA256: e99e45513a04edb14e86bc951915af499dbfbf275440d9f64580ab2c01a73c5f
+  File version: 1.2.1.0
+
+Verify on Windows:
+  Get-FileHash .\FastConduct.exe -Algorithm SHA256
+
+WHAT'S NEW IN v1.2.1
+  * The diffusion coefficient is now obtained from the SLOPE of MSD(t) (linear fit over the
+    whole trajectory) instead of the last point. On short runs this is much more stable.
+  * The report prints the MSD linearity R², so you can immediately see whether the trajectory
+    has reached the diffusive regime (R² -> 1) or whether more steps are needed.
+  * The Haven ratio is kept as an assumption H_R = 1 (sigma = n q² D*/kT); this is now stated
+    explicitly in the report.
+
+Carried over from v1.2
+  * Robust CIF reader: loop_ with tags on one line (GSAS2CIF / FullProf), column index reset,
+    periodic-boundary deduplication, multiple data_ blocks, Cartesian coordinates,
+    "." / "?" values, and a cell-volume vs formula-unit sanity check.
+  * Real cell angles in the CIF export (no more 90° for monoclinic/trigonal cells).
+  * Hw convention for guest-water protons (charge +1), separated from structural hydrogen.
+  * "Save plot -> PDF" works (the PDF backend is no longer stripped from the build).
+
+FIRST PUBLICATION USING FastConduct
+  E. I. Orlova, Y. A. Morkhova, A. A. Shindrov, E. D. Baldin, N. V. Lyskov, E. P. Kharitonova,
+  S. S. Starchikov, I. V. Perunov, K. V. Frolov, M. I. Smolkov,
+  "Tuning electronic and ionic conductivity in ZnFe2O4 spinel via Sn doping for Zn-ion cathodes:
+  the role of cation defects", Journal of Physics and Chemistry of Solids 222 (2027) 114290.
+  https://doi.org/10.1016/j.jpcs.2026.114290
+
+VALIDATION
+  Reference run: MgFe2O4, E_m = 0.35 eV, 5 % vacancies, 2x2x2 supercell, Np = 4, 6.5 A,
+  nu = 1e13 Hz, 5 runs x 1e7 steps, 250-350 K.
+    Ea = 0.3383 eV, R² = 0.9985, log10 sigma(300 K) ~ -2.83 (sigma ~ 1.5e-3 S/cm)
+  Model check: simple cubic lattice with one vacancy reproduces the random-walk estimate
+  D = Gamma a²/N within ~11 % for 4x4x4 ... 8x8x8 boxes.
+
+HOW TO CITE
+  Morkhova, Y. A. FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo
+  (v1.2.1), 2026. https://github.com/YelizMorkhova/FastConduct
+
+  A BibTeX entry is on the project page and in README.md.
