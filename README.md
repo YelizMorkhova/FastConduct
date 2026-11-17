@@ -27,9 +27,11 @@
 | Platform | Download | Size |
 |----------|----------|------|
 | 🪟 **Windows 10 / 11 (64-bit)** | [FastConduct.exe](https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct.exe) | 57 MB |
+| 💻 **Command-line mode (beta)** — Windows / Linux / macOS | [FastConduct_CLI_v1.2.zip](https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct_CLI_v1.2.zip) | 31 KB |
 
-> **Note**: Windows only. Windows 7 and 8 are **not supported** (the application is built on Python 3.12+).
-> Linux and macOS versions are planned for future releases.
+> **Note**: the GUI is Windows only. Windows 7 and 8 are **not supported** (the application is built on Python 3.12+).
+> The command-line mode needs only Python 3.9+ with `numpy` and `scipy` (`matplotlib` for plots)
+> and runs on any OS.
 
 ### 🔐 Verify your download
 
@@ -51,6 +53,29 @@ download it again from the official release page.
 The executable is not code-signed, so Windows SmartScreen may show *"Windows protected your PC"*.
 Click **More info** → **Run anyway** to start the program.
 
+### 💻 Command-line mode (beta)
+
+`FastConduct_CLI_v1.2.zip` — 31 927 bytes. SHA-256:
+
+```
+1fe56b0dc9dbba6e669d739cb87a8b9869f79ad3939f234d30577da93cfe9b4
+```
+
+The same kMC engine without the GUI, for batch processing of many structures from a terminal
+(Windows, Linux, macOS). Requires Python 3.9+ with `numpy` and `scipy`; `matplotlib` only for
+Arrhenius plots.
+
+```bash
+pip install -r requirements.txt     # numpy, scipy, matplotlib
+python fc_cli.py setup              # create settings templates next to the CIF files
+python fc_cli.py structure.cif      # one structure (parameters from structure.json)
+python fc_cli.py .                  # every structure in the folder
+```
+
+Results: `…_results.csv` (one row per run) and `…_results_summary.csv` (per temperature, with
+`Ea` and the Arrhenius fit quality). The archive also contains the `Hw` tools for guest-water
+protons and a worked MgFe₂O₄ example.
+
 ---
 
 ## 🚀 Features
@@ -69,9 +94,22 @@ Click **More info** → **Run anyway** to start the program.
   linear fit of the mean-squared displacement instead of its last point, and the MSD linearity
   (`R²`) is printed in the report — you can see when the trajectory has not reached the diffusive
   regime yet. The Haven ratio is still assumed `H_R = 1` (stated in the report).
-- First paper using FastConduct: Orlova et al., *Tuning electronic and ionic conductivity in
-  ZnFe₂O₄ spinel via Sn doping for Zn-ion cathodes: the role of cation defects*,
-  J. Phys. Chem. Solids **222** (2027) 114290, [doi:10.1016/j.jpcs.2026.114290](https://doi.org/10.1016/j.jpcs.2026.114290).
+- **Command-line mode (beta)**: the same kMC engine without the GUI, for batch processing —
+  `FastConduct_CLI_v1.2.zip` in the release assets.
+
+### 📄 Publications using FastConduct
+
+1. E. I. Orlova, **Y. A. Morkhova**, A. A. Shindrov, E. D. Baldin, N. V. Lyskov, E. P. Kharitonova,
+   S. S. Starchikov, I. V. Perunov, K. V. Frolov, M. I. Smolkov,
+   *Tuning electronic and ionic conductivity in ZnFe₂O₄ spinel via Sn doping for Zn-ion cathodes:
+   the role of cation defects*, J. Phys. Chem. Solids **222** (2027) 114290,
+   [doi:10.1016/j.jpcs.2026.114290](https://doi.org/10.1016/j.jpcs.2026.114290).
+2. A. A. Shindrov, **Y. A. Morkhova**, E. D. Kiseleva,
+   *Mechanochemical synthesis of hexagonal NaCoPO₄×nH₂O: study the phase composition, structure
+   and Na-ion mobility*, J. Phys. Chem. Solids **222** (2027) 114291,
+   [doi:10.1016/j.jpcs.2026.114291](https://doi.org/10.1016/j.jpcs.2026.114291).
+
+If you used FastConduct in your work, please let me know — the paper will be added to this list.
 
 ---
 

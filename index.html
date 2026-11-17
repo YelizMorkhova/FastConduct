@@ -572,6 +572,10 @@
                 </p>
                 <div class="sha-block">e99e45513a04edb14e86bc951915af499dbfbf275440d9f64580ab2c01a73c5f</div>
                 <p style="margin-top: 0.8rem;">
+                    <strong>FastConduct_CLI_v1.2.zip</strong> (command-line mode, beta) — 31 927 bytes. SHA-256:
+                </p>
+                <div class="sha-block">1fe56b0dc9dbba6e669d739cb87a8b9869f79ad3939f234d30577da93cfe9b4</div>
+                <p style="margin-top: 0.8rem;">
                     Check it in PowerShell, from the folder where you saved the file:
                 </p>
                 <div class="sha-block">Get-FileHash .\FastConduct.exe -Algorithm SHA256</div>
@@ -647,7 +651,10 @@
                 <summary>🆕 What's new in v1.2.1</summary>
                 <ul>
                     <li><strong>Diffusion coefficient from the slope of MSD(t)</strong> — the linear fit is used instead of the last point, and the MSD linearity (R²) is printed in the report, so you can see when the trajectory is not yet diffusive.</li>
-                    <li>First paper using FastConduct published — see <a href="https://doi.org/10.1016/j.jpcs.2026.114290" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114290</a>.</li>
+                    <li>Papers using FastConduct are out — see <a href="#publications">Publications</a>
+                        (<a href="https://doi.org/10.1016/j.jpcs.2026.114290" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114290</a>,
+                        <a href="https://doi.org/10.1016/j.jpcs.2026.114291" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114291</a>).</li>
+                    <li><strong>Command-line mode (beta)</strong> is now available as a separate download — the same kMC engine without the GUI, for batch processing of many structures. See the <a href="#cli">Command-line version</a> section.</li>
                 </ul>
                 <p class="release-link">Also in v1.2: robust CIF reader (GSAS2CIF/FullProf, several data blocks,
                     Cartesian coordinates, composition check), real cell angles in the CIF export, the
@@ -657,7 +664,7 @@
         </div>
 
         <!-- ========== ПУБЛИКАЦИИ ========== -->
-        <h2 class="section-title">📄 Publications</h2>
+        <h2 class="section-title" id="publications">📄 Publications</h2>
         <div class="publications-list">
             <p style="margin-bottom: 0.5rem; font-weight: 600; color: #0f172a;">Papers using FastConduct:</p>
             <ul style="padding-left: 1.5rem;">
@@ -670,6 +677,13 @@
                     Journal of Physics and Chemistry of Solids <strong>222</strong> (2027) 114290.
                     <a href="https://doi.org/10.1016/j.jpcs.2026.114290" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114290</a>
                 </li>
+                <li style="margin-top: 0.8rem;">
+                    A.&nbsp;A. Shindrov, <strong>Y.&nbsp;A. Morkhova</strong>, E.&nbsp;D. Kiseleva,
+                    <em>Mechanochemical synthesis of hexagonal NaCoPO<sub>4</sub>&times;nH<sub>2</sub>O:
+                    study the phase composition, structure and Na-ion mobility</em>,
+                    Journal of Physics and Chemistry of Solids <strong>222</strong> (2027) 114291.
+                    <a href="https://doi.org/10.1016/j.jpcs.2026.114291" target="_blank" rel="noopener">doi:10.1016/j.jpcs.2026.114291</a>
+                </li>
             </ul>
             <p style="margin-top: 0.8rem; color: #64748b; font-size: 0.9rem;">
                 📧 To add your paper to this list, please contact: <a href="mailto:eliztimofeeva@mail.ru">eliztimofeeva@mail.ru</a>
@@ -679,7 +693,9 @@
         <!-- ========== КАК ЦИТИРОВАТЬ ========== -->
         <div class="citation">
             <h3>📝 How to cite</h3>
-            <p>No peer-reviewed paper yet — if you use FastConduct, please cite the software entry above.</p>
+            <p>If you use FastConduct, please cite the software entry below. If your work builds on the
+               underlying approach, please also cite the peer-reviewed paper listed in
+               <a href="#publications">Publications</a>.</p>
             <pre id="bibtexBlock">@software{morkhova2026fastconduct,
   author  = {Morkhova, Yelizaveta A.},
   title   = {FastConduct: Ionic Conductivity Calculator using Kinetic Monte Carlo},
@@ -689,6 +705,40 @@
 }</pre>
             <button type="button" class="copy-btn" id="copyBibtex" aria-label="Copy BibTeX entry to clipboard">📋 Copy</button>
             <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <!-- ========== КОМАНДНАЯ ВЕРСИЯ ========== -->
+        <h2 class="section-title" id="cli">💻 Command-line version <span style="font-size:0.6em; color:#64748b;">(beta)</span></h2>
+        <div class="publications-list">
+            <p style="color: #475569; margin-bottom: 0.9rem;">
+                The same kinetic Monte Carlo engine as the GUI, without the graphical interface — for
+                batch processing of many structures from a terminal on Windows, Linux or macOS.
+                Requires Python 3.9+ with <code>numpy</code> and <code>scipy</code>
+                (<code>matplotlib</code> only for Arrhenius plots). No installation needed.
+            </p>
+            <p style="margin-bottom: 0.9rem;">
+                <a href="https://github.com/YelizMorkhova/FastConduct/releases/download/v1.2.1/FastConduct_CLI_v1.2.zip"
+                   style="display: inline-block; background: #0f172a; color: #fff; text-decoration: none;
+                          padding: 0.75rem 1.4rem; border-radius: 10px; font-weight: 600;">
+                    ⬇️ Download FastConduct_CLI_v1.2.zip
+                </a>
+                <span style="color: #64748b; font-size: 0.85rem; margin-left: 0.6rem;">
+                    31 KB · SHA-256: <code>1fe56b0d…93cfe9b4</code>
+                </span>
+            </p>
+            <p style="margin-bottom: 0.4rem; font-weight: 600; color: #0f172a;">Quick start</p>
+            <pre style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.9rem;
+                        overflow-x: auto; font-size: 0.85rem; line-height: 1.5;">python fc_cli.py setup            # settings templates next to the CIF files
+python fc_cli.py structure.cif    # one structure (parameters from structure.json)
+python fc_cli.py .                # every structure in the folder</pre>
+            <p style="margin-top: 0.9rem; color: #64748b; font-size: 0.9rem;">
+                Inside the archive: <code>fc_cli.py</code>, an English README with the full settings
+                reference, <code>requirements.txt</code>, a worked example (MgFe<sub>2</sub>O<sub>4</sub>),
+                and the <code>Hw</code> tools for guest-water protons. Each run produces
+                <code>…_results.csv</code> (per run) and <code>…_results_summary.csv</code>
+                (per temperature, with <code>Ea</code> and the Arrhenius fit quality).
+                <br>This mode is in beta — if something looks wrong, please report it via the feedback form below.
+            </p>
         </div>
 
         <!-- ========== ОБРАТНАЯ СВЯЗЬ ========== -->
